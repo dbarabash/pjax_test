@@ -13,3 +13,4 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+pickle-email-*.html
