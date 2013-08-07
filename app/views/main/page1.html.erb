@@ -1,0 +1,26 @@
+<% unless pjax? %> 
+	<%= content_for :aditional_javascript do %>  
+		<%= javascript_include_tag "jquery.pjax" %>
+	<% end %>
+
+	<%= render :partial => "header" %>
+	<h3>Body</h3>
+	<div id="pjax_container">
+		<ul>
+			<li><%= link_to "page2", :controller => :main, :action => :page2 %></li>
+			<li><%= link_to "page3", :controller => :main, :action => :page3 %></li>
+			<li><%= link_to "page4", :controller => :main, :action => :page4 %></li>
+		</ul>
+		<h2>REFRESH => PAGE1</h2>
+	</div>
+<% else %>
+	<ul>
+		<li><%= link_to "page2", :controller => :main, :action => :page2 %></li>
+		<li><%= link_to "page3", :controller => :main, :action => :page3 %></li>
+		<li><%= link_to "page4", :controller => :main, :action => :page4 %></li>
+	</ul>
+	<h2>PJAX => PAGE1</h2>
+<% end %>
+<% unless pjax? %> 
+	<li><%= link_to "extra", :controller => :extra, :action => :page1 %></li>
+<% end %>
